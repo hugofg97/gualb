@@ -1,0 +1,38 @@
+{
+  "name": "gatsby-example-sourcing-wordpress",
+  "private": true,
+  "description": "An example to learn how to source data form WordPress",
+  "version": "0.1.0",
+  "author": "Vishwa Mehta <vishwa.mehta30@gmail.com>",
+  "dependencies": {
+    "babel-plugin-styled-components": "^2.0.7",
+    "gatsby": "next",
+    "gatsby-core-utils": "next",
+    "gatsby-image": "^3.11.0",
+    "gatsby-plugin-google-fonts": "^1.0.1",
+    "gatsby-plugin-image": "^2.23.0",
+    "gatsby-plugin-sharp": "^4.23.0",
+    "gatsby-plugin-styled-components": "^5.23.0",
+    "gatsby-source-filesystem": "^4.23.0",
+    "gatsby-source-wordpress": "next",
+    "gatsby-transformer-sharp": "^4.23.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-helmet": "^5.2.1",
+    "styled-components": "^5.3.5"
+  },
+  "devDependencies": {
+    "prettier": "2.1.1"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve"
+  }
+}

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import PostSquare from "../globals/post/PostSquare.block";
 import "../../global.css";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
+import { graphql } from "gatsby";
 
 const Container = styled.section`
   width: 1200px;
@@ -46,13 +47,16 @@ const FeaturedWord = styled.b`
 `;
 const GridBlocks = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   width: 1200px;
   flex-direction: row;
 `;
 
 class FinanceSection extends Component {
   render() {
-    const posts = this.props.posts;
+    const blocks = this.props.images;
     return (
       <Container>
         <PresentationBox>
@@ -72,21 +76,18 @@ class FinanceSection extends Component {
             </div>
           </GridParagraph>
 
-          {/* <GridBlocks>
-            {posts.map((value) => {
-              const image =
-                value.node.featuredImage.node.localFile.childImageSharp
-                  .gatsbyImageData;
-              const { title, excerpt } = value.node;
+          <GridBlocks>
+            {blocks.map((value) => {
               return (
                 <PostSquare
-                  title={title}
-                  image={image}
-                  excerpt={excerpt}
+                  height={250}
+                  width={300}
+                  image={value.gatsbyImageData}
+                  excerpt={value.excerpt}
                 ></PostSquare>
               );
             })}
-          </GridBlocks> */}
+          </GridBlocks>
         </PresentationBox>
       </Container>
     );

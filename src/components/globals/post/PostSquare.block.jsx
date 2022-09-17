@@ -1,22 +1,27 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const Block = styled.article`
-  width: 400px;
-  height: 400px;
-  padding: 20px;
+  width: ${(props) => (props?.width ? `${props.width}px` : "300px")};
+  height: ${(props) => (props?.height ? `${props.height}px` : "300px")};
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  align-items: center;
 `;
 
 class PostSquare extends Component {
   render() {
-    console.log(this.props, "_____+++++++");
-    const { title, image, excerpt } = this.props;
+    const { image, excerpt, width, height } = this.props;
+
     return (
-      <Block>
-        <GatsbyImage image={image} alt="iae"></GatsbyImage>
-        <h1>{title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: excerpt }}></div>
+      <Block width={width} height={height}>
+        <GatsbyImage image={image} alt={"alt"}></GatsbyImage>
+        <h3> {excerpt}</h3>
       </Block>
     );
   }

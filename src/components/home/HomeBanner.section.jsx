@@ -4,11 +4,11 @@ import styled from "styled-components";
 import "../../global.css";
 
 const Container = styled.div`
-  background: linear-gradient(225deg, #5250ff 0%, #1c0b2b 70%);
+  background: #28203e;
   width: 100%;
   display: flex;
   padding: 5px;
-  padding-top: 100px;
+  padding-top: 120px;
   justify-content: center;
   // height: 400px;
 `;
@@ -27,24 +27,30 @@ const PresentationBox = styled.div`
 `;
 const TitleH1 = styled.h1`
   color: white;
-  font-weight: bold;
+  font-weight: 900;
+  text-transform: uppercase;
   font-size: 48px;
 `;
 const ParagraphPosH1 = styled.p`
   color: white;
+
   font-weight: bold;
-  font-size: 20px;
+  font-size: 25px;
 `;
 const FeaturedWord = styled.b`
-  color: #6f95ff;
+  color: #04d361;
+  // color: white;
 `;
 const FeaturedSubWord = styled.b`
-  color: #4b4870;
+  color: #04d361;
 `;
 const ButtonSubscriber = styled.button`
   border-radius: 5px;
   color: white;
-  background-color: #6f95ff;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  background-color: #8257e5;
   cursor: pointer;
   border: none;
   font-size: 20px;
@@ -57,12 +63,13 @@ class HomeBanner extends Component {
       <Container>
         <PresentationBox>
           <TitleH1>
-            <FeaturedWord>Desenvolvimento de software</FeaturedWord> web,
-            desktop e mobile
+            Desenvolvimento de software <FeaturedSubWord>web</FeaturedSubWord>,{" "}
+            <FeaturedSubWord>desktop</FeaturedSubWord> e{" "}
+            <FeaturedSubWord>Mobile</FeaturedSubWord>
           </TitleH1>
           <ParagraphPosH1></ParagraphPosH1>
           <ParagraphPosH1>
-            Seja bem-vindo a <FeaturedWord> Gualb</FeaturedWord>. Aqui você
+            Seja bem-vindo a <FeaturedWord> GUALB</FeaturedWord>. Aqui você
             encontra o treinamento completo para criação de softwares que
             atendem todas as demandas.
           </ParagraphPosH1>
@@ -70,7 +77,7 @@ class HomeBanner extends Component {
             Temos cursos de desenvolvimento web, desktop e mobile gratuitos para
             você começar
           </ParagraphPosH1>
-          <ButtonSubscriber> Inscreva-se</ButtonSubscriber>
+          <ButtonSubscriber> Eu quero!</ButtonSubscriber>
         </PresentationBox>
         <ImageBox>
           <StaticImage

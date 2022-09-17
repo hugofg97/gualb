@@ -11,6 +11,14 @@ const Main = styled.main`
   justify-content: center;
   align-items: center;
 `;
+const StyledDiv = styled.div`
+  background: #28203f;
+  width: 100%;
+  z-index: -1;
+  margin-top: -68px;
+  transform: rotate(-3deg);
+  border: 100px solid #28203f;
+`;
 
 class Homepage extends Component {
   render() {
@@ -22,8 +30,7 @@ class Homepage extends Component {
         <Header></Header>
         <Main>
           <HommeBanner></HommeBanner>
-          <FinanceSection posts={data.allWpPost.edges}></FinanceSection>
-          <FinanceSection posts={data.allWpPost.edges}></FinanceSection>
+          <StyledDiv></StyledDiv>
           <FinanceSection posts={data.allWpPost.edges}></FinanceSection>
         </Main>
       </div>
@@ -32,7 +39,15 @@ class Homepage extends Component {
 }
 
 export default Homepage;
-
+export const Head = () => (
+  <>
+    <title>Desenvolvimento de Software | Gualb</title>
+    <meta
+      name="description"
+      content="Curso de desenvolvimento de software, se torne um desenvolvedor de software e aprenda a criar aplicações web, desktop e mobile"
+    />
+  </>
+);
 export const pageQuery = graphql`
   query {
     allWpPage {

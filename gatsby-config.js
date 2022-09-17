@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `An example to learn how to source data from WordPress`,
-    description: `Sourcing data from WordPress`,
+    title: `Desenvolvimento de Software | Gualb`,
+    description: `Aprenda a desenvolver softwares, e torne-se um desenvolvedor full-stack web, desktop e mobile`,
   },
   plugins: [
     `gatsby-plugin-styled-components`,
@@ -16,25 +16,8 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [`Poppins`],
-        display: "swap",
-      },
-    },
-    {
       resolve: `gatsby-source-wordpress`,
       options: {
-        includedRoutes: [
-          "**/categories",
-          "**/posts",
-          "**/pages",
-          "**/media",
-          "**/tags",
-          "**/taxonomies",
-          "**/users",
-        ],
-
         /*
          * The base URL of the WordPress site without the trailingslash and the protocol. This is required.
          * Example : 'dev-gatbsyjswp.pantheonsite.io' or 'www.example-site.com'

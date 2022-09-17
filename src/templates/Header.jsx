@@ -3,9 +3,9 @@ import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import styled from "styled-components";
 
-const Head = styled.header`
-  padding: 05px;
-  background: linear-gradient(225deg, #5250ff 0%, #1c0b2b 87%);
+const Container = styled.header`
+  padding: 10px;
+  background: #28203e;
   width: 100%;
   color: #111111;
   display: flex;
@@ -19,20 +19,20 @@ const Head = styled.header`
 const MenuList = styled.ul`
   display: flex;
   align-items: center;
-  font-weight: bold;
-  font-size: 1rem;
   color: black;
   list-style-type: none;
 `;
 const MenuLi = styled.li`
   padding: 10px;
   color: white;
+  font-size: 25px;
+  font-weight: 900;
 `;
 
 class Header extends Component {
   render() {
     return (
-      <Head>
+      <Container>
         <StaticImage src="../assets/logo.png" width={120} />
         <MenuList>
           <Link to="/">
@@ -58,7 +58,7 @@ class Header extends Component {
           </Link>
         </MenuList>
         <div>search</div>
-      </Head>
+      </Container>
     );
   }
 }

@@ -8,6 +8,7 @@
 }
 
 
+
 @font-face {
   font-family: 'EuroStyle Normal';
   font-style: normal;
@@ -16,6 +17,7 @@
 }
 
 body {
+
   letter-spacing: 0.6mm;
   margin: 0;
   font-family: 'Eurostile';

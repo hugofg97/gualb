@@ -1,19 +1,22 @@
-import React, { Component } from "react";
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
 import styled from "styled-components";
 import PostSquare from "../globals/post/PostSquare.block";
 import "../../global.css";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import { graphql } from "gatsby";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const Container = styled.section`
+  z-index: 2;
   width: 1200px;
-  margin-top: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 const GridParagraph = styled.div`
-  width: 100%;
+  // width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -22,6 +25,7 @@ const GridParagraph = styled.div`
 const PresentationBox = styled.div`
   display: flex;
   align-items: start;
+  background-color: white;
   flex-direction: column;
   align-items: center;
   border-radius: 5px;
@@ -30,8 +34,9 @@ const PresentationBox = styled.div`
 `;
 const SubTitle = styled.h2`
   color: #171923;
-  line-height: 1px;
+  // line-height: 2px;
   font-weight: bold;
+  text-align: center;
   font-size: 48px;
 `;
 const Paragraph = styled.p`
@@ -54,43 +59,111 @@ const GridBlocks = styled.div`
   flex-direction: row;
 `;
 
-class FinanceSection extends Component {
-  render() {
-    const blocks = this.props.images;
-    return (
-      <Container>
-        <PresentationBox>
-          <SubTitle>
-            <FeaturedWord>Desenvolvimento Web Full Stack</FeaturedWord>:
-          </SubTitle>
-          <GridParagraph>
-            <div style={{ width: "50%" }}>
-              <Paragraph>
-                Desenvolva softwares para Web completos. <br></br>
-                Tanto back-end quanto front-end utilizando de tecnologias
-                atuais:
-              </Paragraph>
-            </div>
-            <div style={{ width: "30%" }}>
-              <StaticImage width={400} src="../../assets/images/banner-2.png" />
-            </div>
-          </GridParagraph>
+const FinanceSection = (props) => {
+  const revealBlockRefs = useRef([]);
 
-          <GridBlocks>
-            {blocks.map((value) => {
-              return (
+  revealBlockRefs.current = [];
+
+  useEffect(() => {
+    revealBlockRefs.current.forEach((el, index) => {
+      gsap.fromTo(
+        el,
+        {
+          autoAlpha: 0,
+          x: index <= 2 || index >= 6 ? 100 : -100,
+        },
+        {
+          duration: 1,
+          autoAlpha: 1,
+          ease: "power4.out",
+          x: 0,
+          scrollTrigger: {
+            className: `blocks`,
+            trigger: el,
+
+            start: "top center+=100",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+  }, []);
+
+  const addBlockToRefs = (el) => {
+    if (el && !revealBlockRefs.current.includes(el)) {
+      revealBlockRefs.current.push(el);
+    }
+  };
+  const revealRefs = useRef([]);
+
+  revealRefs.current = [];
+
+  useEffect(() => {
+    revealRefs.current.forEach((el, index) => {
+      gsap.fromTo(
+        el,
+        {
+          autoAlpha: 0,
+          x: 100,
+        },
+        {
+          duration: 1,
+          autoAlpha: 1,
+          ease: "power4.out",
+          x: 0,
+          scrollTrigger: {
+            className: `blocks`,
+            trigger: el,
+            start: "top center+=200",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+  }, []);
+  const addToRefs = (el) => {
+    if (el && !revealRefs.current.includes(el)) {
+      revealRefs.current.push(el);
+    }
+  };
+  const blocks = props.images;
+  return (
+    <Container>
+      <PresentationBox>
+        <SubTitle>
+          Seja um <FeaturedWord>Desenvolvedor Full Stack </FeaturedWord>
+        </SubTitle>
+        <GridParagraph>
+          <div style={{ width: "50%" }}>
+            <Paragraph>
+              Você irá aprender a desenvolver softwares completos <br></br>
+              Tanto back-end quanto front-end e mobile utilizando de tecnologias
+              atuais:
+            </Paragraph>
+          </div>
+          <div style={{ width: "30%" }} ref={addToRefs}>
+            <StaticImage width={400} src="../../assets/images/banner-2.png" />
+          </div>
+        </GridParagraph>
+
+        <GridBlocks>
+          {blocks.map((value) => {
+            return (
+              <div ref={addBlockToRefs}>
                 <PostSquare
                   height={250}
+                  className="blocks"
                   width={300}
                   image={value.gatsbyImageData}
                   excerpt={value.excerpt}
                 ></PostSquare>
-              );
-            })}
-          </GridBlocks>
-        </PresentationBox>
-      </Container>
-    );
-  }
-}
+              </div>
+            );
+          })}
+        </GridBlocks>
+      </PresentationBox>
+    </Container>
+  );
+};
+
 export default FinanceSection;

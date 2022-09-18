@@ -7,7 +7,6 @@ const Container = styled.div`
   background: #28203e;
   width: 100%;
   display: flex;
-  padding: 5px;
   padding-top: 120px;
   justify-content: center;
   // height: 400px;
@@ -63,9 +62,8 @@ class HomeBanner extends Component {
       <Container>
         <PresentationBox>
           <TitleH1>
-            Desenvolvimento de software <FeaturedSubWord>web</FeaturedSubWord>,{" "}
-            <FeaturedSubWord>desktop</FeaturedSubWord> e{" "}
-            <FeaturedSubWord>Mobile</FeaturedSubWord>
+            Desenvolvimento de software <FeaturedSubWord>web</FeaturedSubWord>,
+            e <FeaturedSubWord>Mobile</FeaturedSubWord>
           </TitleH1>
           <ParagraphPosH1></ParagraphPosH1>
           <ParagraphPosH1>

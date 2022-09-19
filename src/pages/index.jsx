@@ -10,7 +10,6 @@ import HommeBanner from "../components/home/HomeBanner.section";
 import MainSection from "../components/home/Main.section";
 import AdventureSection from "../components/home/Mobile.section";
 import { Main, StyledDiv } from "../components/globals/Blocks";
-import { bannerSvg } from "../assets/svg/bannerSvg";
 import "../global.css";
 import "../components/home/skew.css";
 

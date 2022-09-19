@@ -31,7 +31,8 @@ const PresentationBox = styled.div`
 `;
 const SubTitle = styled.h2`
   color: #04d361;
-  line-height: 1px;
+  // line-height: 4px;
+  text-align: center;
   font-weight: bold;
   font-size: 48px;
 `;
@@ -64,7 +65,7 @@ class MobileSection extends Component {
     return (
       <div
         style={{
-          backgroundColor: "#28203f",
+          backgroundColor: "#f5f8ff",
           width: "100%",
           display: "flex",
           flexDirection: "column",
@@ -75,9 +76,6 @@ class MobileSection extends Component {
       >
         <Container>
           <PresentationBox>
-            <SubTitle>
-              <FeaturedWord>Desenvolvimento Mobile</FeaturedWord>:
-            </SubTitle>
             <GridParagraph>
               <div style={{ width: "30%" }}>
                 <StaticImage
@@ -86,11 +84,14 @@ class MobileSection extends Component {
                 />
               </div>
               <div style={{ width: "50%" }}>
+                <SubTitle style={{ textAlign: "start" }}>
+                  <FeaturedWord>Desenvolvimento Mobile</FeaturedWord>:
+                </SubTitle>
                 <Paragraph>
-                  Desenvolva softwares mobile completos. <br></br>
-                  Utilizando Flutter, um dos melhores frameworks para construção
-                  de aplicativos mobile criado pelo google, uma tendência de
-                  escolha de várias empresas
+                  Neste modulo você irá aprender Flutter para criação de
+                  aplicativos IOS e ANDROID. <br />
+                  <br />
+                  Teremos desafios ao decorrer do curso, que serão:
                 </Paragraph>
               </div>
             </GridParagraph>

@@ -1,63 +1,31 @@
 import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import styled from "styled-components";
-import PostSquare from "../globals/post/PostSquare.block";
-import "../../global.css";
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
-import { graphql } from "gatsby";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
 
-const Container = styled.section`
-  z-index: 2;
-  width: 1200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-const GridParagraph = styled.div`
-  // width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-`;
-const PresentationBox = styled.div`
-  display: flex;
-  align-items: start;
-  background-color: white;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 5px;
-  width: 100%;
-  height: 100%;
-`;
-const SubTitle = styled.h2`
-  color: #171923;
-  // line-height: 2px;
-  font-weight: bold;
-  text-align: center;
-  font-size: 48px;
-`;
-const Paragraph = styled.p`
-  color: #4a5568;
-  font-weight: bold;
-  font-size: 40px;
-`;
-const FeaturedWord = styled.b`
-  // color: #ed6a5a;
-  // color: #8257e5;
-  // color: #4b4870;
-  color: #262438;
-`;
-const GridBlocks = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  width: 1200px;
-  flex-direction: row;
-`;
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+import { StaticImage } from "gatsby-plugin-image";
+
+import PostSquare from "../globals/post/PostSquare.block";
+import {
+  Container,
+  SubTitleWithBackground,
+  FeaturedWord,
+  GridBlocks,
+  GridParagraph,
+  Paragraph,
+  PresentationBox,
+  StyledDiv,
+  SubTitle,
+} from "../globals/Blocks";
+
+import {
+  LinearBottomSubtitleSvg,
+  LinearTopSubtitleSvg,
+} from "../../assets/svg/subtitleSvg";
+
+import "../../global.css";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const FinanceSection = (props) => {
   const revealBlockRefs = useRef([]);
@@ -130,9 +98,9 @@ const FinanceSection = (props) => {
   return (
     <Container>
       <PresentationBox>
-        <SubTitle>
+        <SubTitleWithBackground>
           Seja um <FeaturedWord>Desenvolvedor Full Stack </FeaturedWord>
-        </SubTitle>
+        </SubTitleWithBackground>
         <GridParagraph>
           <div style={{ width: "50%" }}>
             <Paragraph>
@@ -145,7 +113,22 @@ const FinanceSection = (props) => {
             <StaticImage width={400} src="../../assets/images/banner-2.png" />
           </div>
         </GridParagraph>
-
+        <SubTitle>
+          O que é <FeaturedWord>Desenvolvedor Full Stack ?</FeaturedWord>
+        </SubTitle>
+        <iframe
+          width="80%"
+          height="415"
+          src="https://www.youtube.com/embed/jfKfPfyJRdk"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <SubTitle>
+          Oque você irá aprender para se tornar um{" "}
+          <FeaturedWord>Desenvolvedor Full Stack </FeaturedWord>
+        </SubTitle>
         <GridBlocks>
           {blocks.map((value) => {
             return (
@@ -161,6 +144,39 @@ const FinanceSection = (props) => {
             );
           })}
         </GridBlocks>
+        <StyledDiv>{LinearTopSubtitleSvg}</StyledDiv>
+
+        <SubTitle
+          style={{
+            marginTop: "-20px",
+            height: "25px",
+            zIndex: 50,
+          }}
+        >
+          <FeaturedWord style={{ color: "white" }}>
+            {"Desafios baseados em aplicações reais".toUpperCase()}
+          </FeaturedWord>
+        </SubTitle>
+        <StyledDiv>{LinearBottomSubtitleSvg}</StyledDiv>
+
+        <StaticImage width={600} src="../../assets/images/desafio.png" />
+
+        <GridParagraph>
+          <div style={{ width: "30%" }}>
+            <StaticImage width={400} src="../../assets/images/banner-3.png" />
+          </div>
+          <div style={{ width: "50%" }}>
+            <SubTitle style={{ textAlign: "start" }}>
+              <FeaturedWord>Desenvolvimento Mobile</FeaturedWord>:
+            </SubTitle>
+            <Paragraph>
+              Neste modulo você irá aprender Flutter para criação de aplicativos
+              IOS e ANDROID. <br />
+              <br />
+              Teremos desafios ao decorrer do curso, que serão:
+            </Paragraph>
+          </div>
+        </GridParagraph>
       </PresentationBox>
     </Container>
   );

@@ -3,102 +3,91 @@ import styled from "styled-components";
 import PostSquare from "../globals/post/PostSquare.block";
 import "../../global.css";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
-import { graphql } from "gatsby";
+import {
+  Container,
+  FeaturedWord,
+  GridParagraph,
+  Paragraph,
+  StyledDiv,
+  SubTitle,
+} from "../globals/Blocks";
 
-const Container = styled.section`
-  z-index: 2;
-  width: 1200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-const GridParagraph = styled.div`
-  // width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-`;
-const PresentationBox = styled.div`
-  display: flex;
-  align-items: start;
-  // background-color: white;
-  flex-direction: column;
-  align-items: center;
-  border-radius: 5px;
-  width: 100%;
-  height: 100%;
-`;
-const SubTitle = styled.h2`
-  color: #04d361;
-  // line-height: 4px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 48px;
-`;
-const Paragraph = styled.p`
-  // color: #4a5568;
-  color: white;
-  font-weight: bold;
-  font-size: 40px;
-`;
-const FeaturedWord = styled.b`
-  // color: #ed6a5a;
-  // color: #8257e5;
-  // color: #4b4870;
-  // color: #262438;
-  color: #04d361;
-  // text-tranform: uppercase;
-`;
-const GridBlocks = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  width: 1200px;
-  flex-direction: row;
-`;
-
-class MobileSection extends Component {
+class AdventureSection extends Component {
   render() {
     const blocks = this.props.images;
     return (
       <div
         style={{
-          backgroundColor: "#f5f8ff",
+          backgroundColor: "#131328",
+          // marginTop: "10px",
           width: "100%",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          marginTop: -3,
+          // marginTop: -3,
           paddingTop: 0,
         }}
       >
         <Container>
-          <PresentationBox>
-            <GridParagraph>
-              <div style={{ width: "30%" }}>
-                <StaticImage
-                  width={400}
-                  src="../../assets/images/banner-3.png"
-                />
-              </div>
-              <div style={{ width: "50%" }}>
-                <SubTitle style={{ textAlign: "start" }}>
-                  <FeaturedWord>Desenvolvimento Mobile</FeaturedWord>:
-                </SubTitle>
-                <Paragraph>
-                  Neste modulo você irá aprender Flutter para criação de
-                  aplicativos IOS e ANDROID. <br />
-                  <br />
-                  Teremos desafios ao decorrer do curso, que serão:
-                </Paragraph>
-              </div>
-            </GridParagraph>
-          </PresentationBox>
+          <SubTitle>
+            <FeaturedWord color="white">
+              {"Desafios baseados em aplicações reais".toUpperCase()}
+            </FeaturedWord>
+          </SubTitle>
+
+          <StaticImage width={600} src="../../assets/images/desafio.png" />
+          <Paragraph style={{ textAlign: "center", color: "white" }}>
+            Durante o curso iremos desenvolver um marketplace do zero <br />
+          </Paragraph>
+          <GridParagraph>
+            <div style={{ width: "13%" }}>
+              <StaticImage
+                width={200}
+                src="../../assets/images/astro-back.png"
+              />
+            </div>
+            <div style={{ width: "20%" }}>
+              <SubTitle
+                style={{ textAlign: "start", fontSize: "25px", color: "white" }}
+              >
+                <FeaturedWord color="white">Backend</FeaturedWord>:
+              </SubTitle>
+              <Paragraph style={{ textAlign: "start", fontSize: "20px" }}>
+                Iremos desenvolver o back-end da aplicação em Nest.js e Graphql,
+                utilizando o banco de dados Postgres
+              </Paragraph>
+            </div>
+            <div style={{ width: "15%" }}>
+              <StaticImage width={200} src="../../assets/images/banner-3.png" />
+            </div>
+            <div style={{ width: "20%" }}>
+              <SubTitle style={{ textAlign: "start", fontSize: "25px" }}>
+                <FeaturedWord>Mobile</FeaturedWord>:
+              </SubTitle>
+              <Paragraph style={{ textAlign: "start", fontSize: "20px" }}>
+                Você irá desenvolver a versão mobile utilizando Flutter e
+                Graphql, integrando com o back-end construido
+              </Paragraph>
+            </div>
+            <div style={{ width: "15%" }}>
+              <StaticImage
+                width={200}
+                src="../../assets/images/astro-front.png"
+              />
+            </div>
+            <div style={{ width: "20%" }}>
+              <SubTitle style={{ textAlign: "start", fontSize: "25px" }}>
+                <FeaturedWord>Front-End</FeaturedWord>:
+              </SubTitle>
+              <Paragraph style={{ textAlign: "start", fontSize: "20px" }}>
+                Iremos desenvolver a versão WEB em Next.js e integraremos com
+                nosso backend utilizando Graphql
+              </Paragraph>
+            </div>
+          </GridParagraph>
         </Container>
       </div>
     );
   }
 }
-export default MobileSection;
+export default AdventureSection;

@@ -1,16 +1,30 @@
 import React, { Component } from "react";
 import { graphql } from "gatsby";
-
+import styled from "styled-components";
 import { excerptsImg } from "../shared/mocks";
 import { filterExcerptImages } from "../shared/helpers";
 
 import Header from "../templates/Header";
-
+import bgbg from "../assets/images/space-bg.jpg";
 import HommeBanner from "../components/home/HomeBanner.section";
 import MainSection from "../components/home/Main.section";
+import AdventureSection from "../components/home/Mobile.section";
 import { Main, StyledDiv } from "../components/globals/Blocks";
-
 import { bannerSvg } from "../assets/svg/bannerSvg";
+import "../global.css";
+import "../components/home/skew.css";
+
+const Fundo = styled.div`
+  // filter: blur(2px);
+  // position: absolute;
+
+  // width: 100%;
+  // height: 1000px;
+  // background: url(${bgbg});
+  // background-attachment: fixed;
+  // background-size: cover;
+  // z-index: -1;
+`;
 
 class Homepage extends Component {
   render() {
@@ -32,13 +46,15 @@ class Homepage extends Component {
         <Main>
           <StyledDiv id="syled-div">
             <HommeBanner></HommeBanner>
-            {bannerSvg}
+            <div className="skewk">.</div>
           </StyledDiv>
 
           <MainSection
             posts={data.allWpPost.edges}
             images={imagesFront}
           ></MainSection>
+          <div className="skewk2">.</div>
+          <AdventureSection></AdventureSection>
         </Main>
       </div>
     );

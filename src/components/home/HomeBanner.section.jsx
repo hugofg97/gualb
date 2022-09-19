@@ -4,12 +4,14 @@ import styled from "styled-components";
 import "../../global.css";
 
 const Container = styled.div`
-  background: #28203e;
+  background: #131328;
   width: 100%;
   display: flex;
-  padding-top: 120px;
+  flex-direction: column;
+  padding-top: 180px;
+  overflow: hidden;
   justify-content: center;
-  // height: 400px;
+  z-index: 10;
 `;
 const ImageBox = styled.div`
   border-radius: 150px;
@@ -54,35 +56,44 @@ const ButtonSubscriber = styled.button`
   border: none;
   font-size: 20px;
   padding: 10px;
+  z-index: 10;
 `;
 
 class HomeBanner extends Component {
   render() {
     return (
       <Container>
-        <PresentationBox>
-          <TitleH1>
-            Desenvolvimento de software <FeaturedSubWord>web</FeaturedSubWord>,
-            e <FeaturedSubWord>Mobile</FeaturedSubWord>
-          </TitleH1>
-          <ParagraphPosH1></ParagraphPosH1>
-          <ParagraphPosH1>
-            Seja bem-vindo a <FeaturedWord> GUALB</FeaturedWord>. Aqui você
-            encontra o treinamento completo para criação de softwares que
-            atendem todas as demandas.
-          </ParagraphPosH1>
-          <ParagraphPosH1>
-            Temos cursos de desenvolvimento web, desktop e mobile gratuitos para
-            você começar
-          </ParagraphPosH1>
-          <ButtonSubscriber> Eu quero!</ButtonSubscriber>
-        </PresentationBox>
-        <ImageBox>
-          <StaticImage
-            height={400}
-            src="../../assets/images/banner-1.png"
-          ></StaticImage>
-        </ImageBox>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <PresentationBox>
+            <TitleH1>
+              Desenvolvimento de software <FeaturedSubWord>web</FeaturedSubWord>
+              , e <FeaturedSubWord>Mobile</FeaturedSubWord>
+            </TitleH1>
+            <ParagraphPosH1></ParagraphPosH1>
+            <ParagraphPosH1>
+              Seja bem-vindo a <FeaturedWord> GUALB</FeaturedWord>. Aqui você
+              encontra o treinamento completo para criação de softwares que
+              atendem todas as demandas.
+            </ParagraphPosH1>
+            <ParagraphPosH1>
+              Temos cursos de desenvolvimento web, desktop e mobile gratuitos
+              para você começar
+            </ParagraphPosH1>
+            <ButtonSubscriber> Eu quero!</ButtonSubscriber>
+          </PresentationBox>
+          <ImageBox>
+            <StaticImage
+              height={400}
+              src="../../assets/images/banner-1.png"
+            ></StaticImage>
+          </ImageBox>
+        </div>
       </Container>
     );
   }

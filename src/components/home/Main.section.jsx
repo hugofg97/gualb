@@ -8,20 +8,13 @@ import { StaticImage } from "gatsby-plugin-image";
 import PostSquare from "../globals/post/PostSquare.block";
 import {
   Container,
-  SubTitleWithBackground,
   FeaturedWord,
   GridBlocks,
   GridParagraph,
   Paragraph,
   PresentationBox,
-  StyledDiv,
   SubTitle,
 } from "../globals/Blocks";
-
-import {
-  LinearBottomSubtitleSvg,
-  LinearTopSubtitleSvg,
-} from "../../assets/svg/subtitleSvg";
 
 import "../../global.css";
 
@@ -98,9 +91,7 @@ const FinanceSection = (props) => {
   return (
     <Container>
       <PresentationBox>
-        <SubTitleWithBackground>
-          Seja um <FeaturedWord>Desenvolvedor Full Stack </FeaturedWord>
-        </SubTitleWithBackground>
+        <SubTitle>Seja um Desenvolvedor Full Stack</SubTitle>
         <GridParagraph>
           <div style={{ width: "50%" }}>
             <Paragraph>
@@ -113,22 +104,7 @@ const FinanceSection = (props) => {
             <StaticImage width={400} src="../../assets/images/banner-2.png" />
           </div>
         </GridParagraph>
-        <SubTitle>
-          O que é <FeaturedWord>Desenvolvedor Full Stack ?</FeaturedWord>
-        </SubTitle>
-        <iframe
-          width="80%"
-          height="415"
-          src="https://www.youtube.com/embed/jfKfPfyJRdk"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-        <SubTitle>
-          Oque você irá aprender para se tornar um{" "}
-          <FeaturedWord>Desenvolvedor Full Stack </FeaturedWord>
-        </SubTitle>
+
         <GridBlocks>
           {blocks.map((value) => {
             return (
@@ -144,39 +120,6 @@ const FinanceSection = (props) => {
             );
           })}
         </GridBlocks>
-        <StyledDiv>{LinearTopSubtitleSvg}</StyledDiv>
-
-        <SubTitle
-          style={{
-            marginTop: "-20px",
-            height: "25px",
-            zIndex: 50,
-          }}
-        >
-          <FeaturedWord style={{ color: "white" }}>
-            {"Desafios baseados em aplicações reais".toUpperCase()}
-          </FeaturedWord>
-        </SubTitle>
-        <StyledDiv>{LinearBottomSubtitleSvg}</StyledDiv>
-
-        <StaticImage width={600} src="../../assets/images/desafio.png" />
-
-        <GridParagraph>
-          <div style={{ width: "30%" }}>
-            <StaticImage width={400} src="../../assets/images/banner-3.png" />
-          </div>
-          <div style={{ width: "50%" }}>
-            <SubTitle style={{ textAlign: "start" }}>
-              <FeaturedWord>Desenvolvimento Mobile</FeaturedWord>:
-            </SubTitle>
-            <Paragraph>
-              Neste modulo você irá aprender Flutter para criação de aplicativos
-              IOS e ANDROID. <br />
-              <br />
-              Teremos desafios ao decorrer do curso, que serão:
-            </Paragraph>
-          </div>
-        </GridParagraph>
       </PresentationBox>
     </Container>
   );

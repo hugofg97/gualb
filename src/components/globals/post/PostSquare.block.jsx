@@ -14,7 +14,6 @@ const Block = styled.article`
   gap: 4px;
   margin: 5px;
   border-radius: 5px;
-  // box-shadow: 1px 1px 2px 1px #051933;
   flex-direction: column;
   text-align: center;
   font-size: 15px;

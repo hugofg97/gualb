@@ -1,14 +1,19 @@
 .skewk {
-  background: #131328;
+  background: white;
   width: 100%;
   height: 100px;
-  /* margin-top: -45px; */
   transform: skewY(2deg) translateY(-45px);
-  z-index: -1
+  z-index: -1;
+
+  @media(max-width: 450px) {
+    height: 55px;
+
+  }
 }
 
 .skewk2 {
-  background: #131328;
+  background-image: radial-gradient(circle at 47% 59%, #093366, #051933 104%);
+
   width: 100%;
   height: 100px;
   margin-top: 25px;

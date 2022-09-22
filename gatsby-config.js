@@ -1,9 +1,22 @@
+const myCustomQueries = {
+  xs: "(max-width: 420px)",
+  sm: "(max-width: 720px)",
+  md: "(max-width: 1024px)",
+  l: "(max-width: 1536px)",
+  portrait: "(orientation: portrait)",
+};
 module.exports = {
   siteMetadata: {
     title: `Desenvolvimento de Software | Gualb`,
     description: `Aprenda a desenvolver softwares, e torne-se um desenvolvedor full-stack web, desktop e mobile`,
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-breakpoints",
+      options: {
+        queries: myCustomQueries,
+      },
+    },
     {
       resolve: `gatsby-plugin-scroll-reveal`,
       options: {

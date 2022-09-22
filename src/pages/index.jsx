@@ -7,23 +7,13 @@ import { filterExcerptImages } from "../shared/helpers";
 import Header from "../templates/Header";
 import bgbg from "../assets/images/space-bg.jpg";
 import HommeBanner from "../components/home/HomeBanner.section";
-import MainSection from "../components/home/Main.section";
+import FullStack from "../components/home/FullStack.section";
 import AdventureSection from "../components/home/Mobile.section";
 import { Main, StyledDiv } from "../components/globals/Blocks";
+import { BreakpointProvider } from "gatsby-plugin-breakpoints";
+
 import "../global.css";
 import "../components/home/skew.css";
-
-const Fundo = styled.div`
-  // filter: blur(2px);
-  // position: absolute;
-
-  // width: 100%;
-  // height: 1000px;
-  // background: url(${bgbg});
-  // background-attachment: fixed;
-  // background-size: cover;
-  // z-index: -1;
-`;
 
 class Homepage extends Component {
   render() {
@@ -42,18 +32,19 @@ class Homepage extends Component {
     return (
       <div style={{ margin: "0 auto" }}>
         <Header></Header>
+
         <Main>
-          <StyledDiv id="syled-div">
+          <StyledDiv>
             <HommeBanner></HommeBanner>
             <div className="skewk">.</div>
           </StyledDiv>
 
-          <MainSection
+          <FullStack
             posts={data.allWpPost.edges}
             images={imagesFront}
-          ></MainSection>
+          ></FullStack>
           <div className="skewk2">.</div>
-          <AdventureSection></AdventureSection>
+          {/* <AdventureSection></AdventureSection> */}
         </Main>
       </div>
     );

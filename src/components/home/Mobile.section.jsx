@@ -18,13 +18,14 @@ class AdventureSection extends Component {
     return (
       <div
         style={{
-          backgroundColor: "#131328",
-          // marginTop: "10px",
+          backgroundImage:
+            "radial-gradient(circle at 47% 59%, #093366, #051933 104%)",
+
           width: "100%",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          // marginTop: -3,
+
           paddingTop: 0,
         }}
       >

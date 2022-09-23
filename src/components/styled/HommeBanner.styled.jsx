@@ -11,7 +11,7 @@ export const Container = styled.div`
   background-image: radial-gradient(circle at 47% 59%, #093366, #051933 104%);
   padding-top: 180px;
   overflow: hidden;
-  height: 80vh;
+  height: 900px;
   justify-content: center;
   z-index: 10;
   @media (max-width: 450px) {

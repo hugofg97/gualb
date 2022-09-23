@@ -26,7 +26,7 @@ import SlideDownAnim from "../Animation/SlideDown.anim";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const FullStackSection = (props) => {
+const TechnologySection = (props) => {
   const brakpoints = useBreakpoint();
 
   const slideUpAnimRef = useRef([]);
@@ -66,53 +66,65 @@ const FullStackSection = (props) => {
       slideLeftAnimRef.current.push(el);
     }
   };
-  const blocks = props.images;
+  const { techs } = props;
+
   return (
     <Container>
       <PresentationBox>
-        <GridParagraph ref={addSlideLeftAnim}>
-          <Paragraph width="60%">
-            <SubTitle>
-              Porque escolher a <FeaturedWord>Gualb</FeaturedWord> ?
-            </SubTitle>
-            Nosso curso irá acelerar o seu processo de aprendizado, focando na
-            prática e nas tecnologias mais utilizadas do mercado. Você irá
-            desenvolver aplicações profissionais de alto nível
-          </Paragraph>
-
-          <div
-            style={{
-              overflow: "hidden",
-              width: "30%",
-            }}
-            ref={addSlideRightAnim}
-          >
-            <StaticImage width={400} src="../../assets/images/banner-2.png" />
-          </div>
-        </GridParagraph>
-        <div
-          ref={addSlideDownAnim}
-          style={{
-            width: "1.5px",
-            height: "80px",
-            background: "linear-gradient(180deg,#093366,rgba(153,109,255,0))",
-          }}
-        ></div>
+        <h3>Front-End</h3>
+        <GridBlocks>
+          {techs.map(
+            (tech) =>
+              tech.frontend?.gatsbyImageData && (
+                <PostSquare
+                  image={tech.frontend?.gatsbyImageData}
+                  excerpt={tech.frontend.excerpt}
+                  width={300}
+                  height={250}
+                  animated={addSlideUpAnim}
+                >
+                  Teoria
+                </PostSquare>
+              )
+          )}
+        </GridBlocks>
+        <h3>Mobile</h3>
 
         <GridBlocks>
-          <BlockLearning ref={addSlideUpAnim}>Teoria</BlockLearning>
-          <BlockLearning ref={addSlideUpAnim}>Prática</BlockLearning>
-          <BlockLearning ref={addSlideUpAnim}>Desafios</BlockLearning>
+          {techs.map(
+            (tech) =>
+              tech.mobile?.gatsbyImageData && (
+                <PostSquare
+                  image={tech.mobile?.gatsbyImageData}
+                  excerpt={tech.mobile.excerpt}
+                  width={300}
+                  height={250}
+                  animated={addSlideUpAnim}
+                >
+                  Teoria
+                </PostSquare>
+              )
+          )}
+        </GridBlocks>
+        <h3>Back-End</h3>
+
+        <GridBlocks>
+          {techs.map(
+            (tech) =>
+              tech.backend?.gatsbyImageData && (
+                <PostSquare
+                  image={tech.backend?.gatsbyImageData}
+                  excerpt={tech.backend.excerpt}
+                  width={300}
+                  height={250}
+                  animated={addSlideUpAnim}
+                >
+                  Teoria
+                </PostSquare>
+              )
+          )}
         </GridBlocks>
       </PresentationBox>
-      <div
-        ref={addSlideUpAnim}
-        style={{
-          width: "1.5px",
-          height: "80px",
-          background: "linear-gradient(180deg,#093366,rgba(153,109,255,0))",
-        }}
-      ></div>
     </Container>
   );
 };
@@ -121,4 +133,4 @@ const FullStackSection = (props) => {
 // ref={addSlideUpAnim}
 // ref={addSlideUpAnim}
 
-export default withBreakpoints(FullStackSection);
+export default withBreakpoints(TechnologySection);

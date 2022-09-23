@@ -18,11 +18,12 @@ export const StyledDiv = styled.div`
   z-index: 9;
 `;
 export const Container = styled.section`
-  z-index: 2;
+  z-index: 1;
   width: 1200px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  padding: 50px;
   justify-content: center;
   align-items: center;
   @media (max-width: 740px) {

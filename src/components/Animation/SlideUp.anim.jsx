@@ -23,7 +23,7 @@ const SlideUpAnim = (elements) => {
           className: `blocks`,
           trigger: el,
 
-          start: "top center+=100",
+          start: "top center+=400",
           toggleActions: "play none none reverse",
         },
       }

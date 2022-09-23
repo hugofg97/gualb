@@ -5,12 +5,11 @@ import { excerptsImg } from "../shared/mocks";
 import { filterExcerptImages } from "../shared/helpers";
 
 import Header from "../templates/Header";
-import bgbg from "../assets/images/space-bg.jpg";
 import HommeBanner from "../components/home/HomeBanner.section";
 import FullStack from "../components/home/FullStack.section";
-import AdventureSection from "../components/home/Mobile.section";
-import { Main, StyledDiv } from "../components/globals/Blocks";
-import { BreakpointProvider } from "gatsby-plugin-breakpoints";
+import ChallengeSection from "../components/home/Challenge.section";
+import TechnologySection from "../components/home/Technology.section";
+import { Main, StyledDiv, SubTitle } from "../components/globals/Blocks";
 
 import "../global.css";
 import "../components/home/skew.css";
@@ -24,11 +23,10 @@ class Homepage extends Component {
       const { node } = image;
 
       return {
-        ...node,
-        excerpt: filterExcerptImages(node.fluid.originalName, excerptsImg),
+        ...filterExcerptImages(node.fluid.originalName, excerptsImg, node),
       };
     });
-
+    console.log(imagesFront);
     return (
       <div style={{ margin: "0 auto" }}>
         <Header></Header>
@@ -44,7 +42,24 @@ class Homepage extends Component {
             images={imagesFront}
           ></FullStack>
           <div className="skewk2">.</div>
-          {/* <AdventureSection></AdventureSection> */}
+          <ChallengeSection></ChallengeSection>
+          <div
+            style={{
+              marginTop: "-60px",
+              backgroundColor: "white",
+              borderRadius: "10px",
+              padding: "10px",
+              height: "100px",
+
+              // position: "static",
+              zIndex: 1,
+            }}
+          >
+            <SubTitle style={{ margin: "auto", textAlign: "center" }}>
+              Tecnologias que vc irá aprender
+            </SubTitle>
+          </div>
+          <TechnologySection techs={imagesFront}></TechnologySection>
         </Main>
       </div>
     );
@@ -71,12 +86,15 @@ export const pageQuery = graphql`
               "next.png"
               "reactjs.png"
               "gatsby.png"
+              "dart.png"
+              "node.png"
               "html.png"
               "css.png"
               "nest.png"
               "aws.png"
               "graphql.png"
               "flutter.png"
+              "graphql.png"
             ]
           }
         }

@@ -84,8 +84,9 @@ export const SubTitle = styled.h2`
 export const Paragraph = styled.p`
   color: #4a5568;
   font-weight: bold;
-  font-size: 40px;
-  width: ${(props) => (props?.width ? props.width : "50%")};
+  font-size: 25px;
+  padding: 24px;
+  // width: ${(props) => (props?.width ? props.width : "50%")};
   @media (max-width: 740px) {
     font-size: 1rem;
     // width: 100%;

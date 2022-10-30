@@ -20,12 +20,13 @@ const HomeBanner = () => {
   return (
     <Container>
       <TitleH1 className="title">
-        Desenvolvimento de software <FeaturedSubWord>web</FeaturedSubWord> e{" "}
-        <FeaturedSubWord>Mobile</FeaturedSubWord> do zero ao profissional
+        Hugo Gualberto, Desenvolvedor de software{" "}
+        <FeaturedSubWord>web</FeaturedSubWord> e{" "}
+        <FeaturedSubWord>Mobile</FeaturedSubWord> profissional
       </TitleH1>
 
       <ImageBox>
-        <StaticImage src="../../assets/images/banner-1.png"></StaticImage>
+        <StaticImage src="../../assets/images/banner-13.png"></StaticImage>
       </ImageBox>
 
       <TecnologyCategoryGrid>
@@ -35,8 +36,8 @@ const HomeBanner = () => {
             <Info>Front-end</Info>
           </IconBox>
           <ContentInfo>
-            Crie aplicações WEB optmizadas para SEO como blogs e ecommerces,
-            sistemas para gestão entre outros com React.js, Next.js e Gatsby
+            Especialista em aplicações WEB optmizadas para SEO como blogs e
+            ecommerces, sistemas para gestão ERP
           </ContentInfo>
         </TecnologyCategoryBlock>
         <TecnologyCategoryBlock>
@@ -49,8 +50,8 @@ const HomeBanner = () => {
             <Info>Mobile</Info>
           </IconBox>
           <ContentInfo>
-            Desenvolva aplicações mobile com Flutter, framework preferido para
-            desenvolvimento mobile, criado pelo Google
+            Desenvolvimento mobile integrados com plataformas WEB, seu produto
+            em todas as telas
           </ContentInfo>
         </TecnologyCategoryBlock>
         <TecnologyCategoryBlock>
@@ -59,8 +60,8 @@ const HomeBanner = () => {
             <Info>backend</Info>
           </IconBox>
           <ContentInfo>
-            Desenvolva aplicações back-end com Node.js, Express, Nest.js e
-            Graphql bem arquiteturadas de código limpo
+            Especialista em aplicações back-end baseado em micro serviços e mult
+            tenancy, serviços inteligentes para varias aplicações
           </ContentInfo>
         </TecnologyCategoryBlock>
         <TecnologyCategoryBlock>
@@ -69,13 +70,13 @@ const HomeBanner = () => {
             <Info>Infraestrutura</Info>
           </IconBox>
           <ContentInfo>
-            Aprenda a hospedar suas aplicações na Aws Aws, Ec2, Amplify e
-            gerenciar bancos de dados Postgres, MySql e Mongo DB
+            Gerencia de aplicações na Aws com Ec2, Amplify e bancos de dados
+            Postgres, MySql e Mongo DB
           </ContentInfo>
         </TecnologyCategoryBlock>
       </TecnologyCategoryGrid>
 
-      <ButtonSubscriber> Eu quero!</ButtonSubscriber>
+      <ButtonSubscriber>Contate-me</ButtonSubscriber>
     </Container>
   );
 };

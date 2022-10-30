@@ -9,6 +9,7 @@ class Page extends Component {
     return (
       <div style={{ width: "1200px", margin: "auto" }}>
         <Header></Header>
+
         <h1>{StaticPage.title}</h1>
         <main dangerouslySetInnerHTML={{ __html: StaticPage.content }}></main>
       </div>

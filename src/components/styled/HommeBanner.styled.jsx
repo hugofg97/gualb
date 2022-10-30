@@ -27,14 +27,15 @@ export const ImageBox = styled.div`
   grid-area: mascot;
   max-width: 600px;
   img {
-    width: 620px;
-    height: 400px;
+    width: 400px;
+    height: 500px;
   }
   @media (max-width: 450px) {
     img {
+      margin-top: 20px;
       padding: 10px;
-      width: 250px;
-      height: 150px;
+      width: 300px;
+      height: 320px;
     }
   }
 `;

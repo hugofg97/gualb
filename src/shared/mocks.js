@@ -31,7 +31,7 @@ export const menuListAcademy = [
     name: "Inicio",
   },
   {
-    path: "/conteudo",
+    path: "/noticias",
     name: "Blog",
   },
   {

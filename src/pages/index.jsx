@@ -56,7 +56,7 @@ class Homepage extends Component {
             }}
           >
             <SubTitle style={{ margin: "auto", textAlign: "center" }}>
-              Tecnologias que vc irá aprender
+              Conteudo sobre Desenvolvimento de Software e Tecnologia
             </SubTitle>
           </div>
           <TechnologySection techs={imagesFront}></TechnologySection>

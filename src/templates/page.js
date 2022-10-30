@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { graphql } from "gatsby";
 import Header from "./Header";
 import { Main } from "../components/globals/Blocks";
-import Image from "../assets/images/backblog.png";
+import Image from "../assets/images/backblog.webp";
 
 class Page extends Component {
   render() {

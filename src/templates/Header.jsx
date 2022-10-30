@@ -21,12 +21,12 @@ const Header = () => {
         <div></div>
         <div></div>
       </MenuIcon>
-      <StaticImage src="../assets/logo.png" width={120} />
+      {/* <StaticImage src="../assets/logo.png" width={120} /> */}
       <div>search</div>
     </Container>
   ) : (
     <Container>
-      <StaticImage src="../assets/logo.png" width={120} />
+      <StaticImage src="../assets/logo.png" width={200} />
       <MenuList>
         {menuListAcademy.map((itemMenu) => (
           <Link to={itemMenu.path}>

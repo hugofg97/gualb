@@ -51,8 +51,8 @@ module.exports = {
          * The base URL of the WordPress site without the trailingslash and the protocol. This is required.
          * Example : 'dev-gatbsyjswp.pantheonsite.io' or 'www.example-site.com'
          */
-        url: `http://localhost/wordpress/wordpress/graphql`,
-        baseUrl: `http://localhost/wordpress/wordpress/graphql`,
+        url: `http://3.239.218.175/graphql`,
+        baseUrl: `http://3.239.218.175/graphql`,
         protocol: `http`,
         hostingWPCOM: false,
         useACF: false,

@@ -20,10 +20,10 @@ export const ImgBox = styled.div`
 export const ChallengeBox = styled.div`
   margin-top: 48px;
   display: flex;
-  border: 0.3px solid #0d4d9c;
+  border: 0.3px solid #8257e5;
   border-radius: 5px;
   padding-left: 20px;
-  background: #051d3b;
+  background: #15132e;
   flex-direction: column;
   width: 300px;
 `;

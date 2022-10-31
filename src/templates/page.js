@@ -3,6 +3,43 @@ import { graphql } from "gatsby";
 import Header from "./Header";
 import { Main } from "../components/globals/Blocks";
 import Image from "../assets/images/backblog.webp";
+import styled from "styled-components";
+import { GatsbyImage } from "gatsby-plugin-image";
+
+const ArticleH1 = styled.h1``;
+const Article = styled.article`
+  & img {
+    border-radius: 16px;
+  }
+  @media (max-width: 400px) {
+    & img {
+      width: 300px;
+    }
+  }
+`;
+const ContainerArticle = styled.div`
+  background-color: rgba(41, 37, 88, 1);
+  text-align: center;
+  width: 400px;
+  box-shadow: 1px 1px 10px 1px rgba(1, 1, 1, 0.6);
+  border-radius: 16px;
+  padding: 16px;
+  height: 450px;
+  @media (max-width: 400px) {
+    width: 100%;
+
+    // min-height: 600px;
+  }
+`;
+const ArticlesBlog = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 16px 16px 16px 16px;
+
+  gap: 24px;
+  justify-content: space-start;
+`;
 
 class Page extends Component {
   render() {
@@ -13,33 +50,81 @@ class Page extends Component {
       <div
         style={{
           margin: "0 auto",
-          height: "100vh",
           backgroundImage: `url(${Image})`,
           backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
+          backgroundSize: "100% 100%",
           backgroundAttachment: "fixed",
+          height: "100vh",
         }}
       >
         <Header></Header>
-
-        <h1>{StaticPage.title}</h1>
-        <Main style={{ background: "rgba(44,44,44,0.5)", height: "100vh" }}>
-          <div
-            style={{
-              marginTop: 80,
-              display: "flex",
-              justifyContent: "start",
-              flexDirection: "column",
-              width: "1140px",
-            }}
-          >
-            <div></div>
-            <h1>Artigos recentes</h1>
-            {posts.map((el) => (
-              <h1>{el.node.title}</h1>
-            ))}
-          </div>
-        </Main>
+        {/* <div
+          style={{
+            display: "flex",
+            width: 200,
+            height: 200,
+            background: "red",
+          }}
+        >
+          aasas
+        </div> */}
+        <div
+          style={{
+            background: "rgba(255,255,255,0.2)",
+            overflowY: "scroll",
+            height: "100vh",
+          }}
+        >
+          <Main>
+            <h1 style={{ color: "white", marginTop: "100px" }}>
+              Artigos recentes
+            </h1>
+            <ArticlesBlog>
+              {posts.map((el) => (
+                <ContainerArticle>
+                  <Article>
+                    <GatsbyImage
+                      style={{ bordeRadius: "8px" }}
+                      image={el.node.featuredImage.node.gatsbyImage}
+                    ></GatsbyImage>
+                    <h1 style={{ color: "white" }}>{el.node.title}</h1>
+                    <p style={{ color: "white" }}>
+                      {el.node.excerpt.replace("<p>", "").replace("</p>", "")}
+                    </p>
+                    <span style={{ color: "white" }}>
+                      {el.node.author.node.firstName}
+                    </span>
+                    <span style={{ color: "white" }}>
+                      {el.node.commentCount}
+                    </span>
+                  </Article>
+                </ContainerArticle>
+              ))}
+            </ArticlesBlog>
+            <ArticlesBlog>
+              {posts.map((el) => (
+                <ContainerArticle>
+                  <Article>
+                    <GatsbyImage
+                      style={{ bordeRadius: "8px" }}
+                      image={el.node.featuredImage.node.gatsbyImage}
+                    ></GatsbyImage>
+                    <h1 style={{ color: "white" }}>{el.node.title}</h1>
+                    <p style={{ color: "white" }}>
+                      {el.node.excerpt.replace("<p>", "").replace("</p>", "")}
+                    </p>
+                    <span style={{ color: "white" }}>
+                      {el.node.author.node.firstName}
+                    </span>
+                    <span style={{ color: "white" }}>
+                      {el.node.commentCount}
+                    </span>
+                  </Article>
+                </ContainerArticle>
+              ))}
+            </ArticlesBlog>
+          </Main>
+        </div>
       </div>
     );
   }
@@ -63,17 +148,41 @@ export const pageQuery = graphql`
     allWpPost {
       edges {
         node {
-          id
-          link
-          slug
-          template {
-            templateName
-          }
-          title
-          uri
+          commentCount
+          commentStatus
           date
           excerpt
-          content
+          title
+          featuredImage {
+            node {
+              gatsbyImage(
+                width: 1920
+                height: 1080
+                formats: WEBP
+                aspectRatio: 5
+              )
+              template {
+                templateName
+              }
+              title
+            }
+          }
+          categories {
+            nodes {
+              name
+              slug
+            }
+          }
+          author {
+            node {
+              avatar {
+                default
+              }
+              slug
+              nickname
+              firstName
+            }
+          }
         }
       }
     }

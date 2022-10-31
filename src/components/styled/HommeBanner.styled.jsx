@@ -8,7 +8,7 @@ export const Container = styled.div`
     "block  block block block"
     "block  block block block"
     "subscribe none none none";
-  background-image: radial-gradient(circle at 47% 59%, #093366, #051933 104%);
+  background-image: radial-gradient(circle at 47% 59%, #292558, #15132e 104%);
   padding-top: 180px;
   overflow: hidden;
   height: 900px;
@@ -59,8 +59,8 @@ export const TecnologyCategoryBlock = styled.div`
   width: 200px;
   height: 230px;
   padding: 25px 25px 0px 25px;
-  background-color: #051d3b;
-  border: 0.3px solid #0d4d9c;
+  background-color: #15132e;
+  border: 0.3px solid #8257e5;
   margin-top: 10px;
   border-radius: 10px;
   cursor: pointer;
@@ -68,7 +68,7 @@ export const TecnologyCategoryBlock = styled.div`
   transition: margin-top 0.2s, height 0.2s;
   z-index: 999;
   &:hover {
-    border: 0.3px solid #1371e6;
+    border: 0.3px solid #04d361;
     margin-top: 0px;
     box-shadow: 1px 1px 1px 1px rgba(1, 1, 1, 0.3);
   }

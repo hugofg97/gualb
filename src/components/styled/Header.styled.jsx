@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.header`
   padding: 10px;
-  background-image: radial-gradient(circle at 47% 59%, #093366, #051933 104%);
+  background-image: radial-gradient(circle at 47% 59%, #292558, #15132e 104%);
   width: 100%;
   color: #111111;
   display: flex;

@@ -26,7 +26,7 @@ const HomeBanner = () => {
       </TitleH1>
 
       <ImageBox>
-        <StaticImage src="../../assets/images/banner-13.png"></StaticImage>
+        <StaticImage src="../../assets/images/moldura.png"></StaticImage>
       </ImageBox>
 
       <TecnologyCategoryGrid>

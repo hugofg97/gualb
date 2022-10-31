@@ -36,7 +36,7 @@ const ChallengeSection = () => {
     <div
       style={{
         backgroundImage:
-          "radial-gradient(circle at 47% 59%, #093366, #051933 104%)",
+          "radial-gradient(circle at 47% 59%, #292558, #15132e 104%)",
 
         width: "100%",
         display: "flex",

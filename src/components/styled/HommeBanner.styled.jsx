@@ -26,12 +26,12 @@ export const Container = styled.div`
 export const ImageBox = styled.div`
   grid-area: mascot;
   max-width: 600px;
-  .gatsby-image-wrapper img {
+  & .gatsby-image-wrapper img {
     width: 380px;
     height: 400px;
   }
   @media (max-width: 450px) {
-    img {
+    .gatsby-image-wrapper img {
       margin-top: 20px;
       padding: 10px;
       width: 300px;

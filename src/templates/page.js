@@ -12,9 +12,6 @@ const Article = styled.article`
     border-radius: 16px;
   }
   @media (max-width: 400px) {
-    & img {
-      width: 300px;
-    }
   }
 `;
 const ContainerArticle = styled.div`
@@ -163,12 +160,7 @@ export const pageQuery = graphql`
           title
           featuredImage {
             node {
-              gatsbyImage(
-                width: 1920
-                height: 1080
-                formats: WEBP
-                aspectRatio: 5
-              )
+              gatsbyImage(width: 300, formats: WEBP)
               template {
                 templateName
               }

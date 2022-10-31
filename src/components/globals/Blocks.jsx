@@ -98,7 +98,7 @@ export const GridBlocks = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  width: 1200px;
+  // width: 1200px;
   flex-direction: row;
   @media (max-width: 740px) {
     width: 100vw;

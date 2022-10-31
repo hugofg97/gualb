@@ -71,7 +71,8 @@ const TechnologySection = (props) => {
   return (
     <Container>
       <PresentationBox>
-        <h3>Front-End</h3>
+        <h3>Mobile</h3>
+
         <GridBlocks>
           {techs.map(
             (tech) =>
@@ -79,44 +80,8 @@ const TechnologySection = (props) => {
                 <PostSquare
                   image={tech.frontend?.gatsbyImageData}
                   excerpt={tech.frontend.excerpt}
-                  width={300}
-                  height={250}
-                  animated={addSlideUpAnim}
-                >
-                  Teoria
-                </PostSquare>
-              )
-          )}
-        </GridBlocks>
-        <h3>Mobile</h3>
-
-        <GridBlocks>
-          {techs.map(
-            (tech) =>
-              tech.mobile?.gatsbyImageData && (
-                <PostSquare
-                  image={tech.mobile?.gatsbyImageData}
-                  excerpt={tech.mobile.excerpt}
-                  width={300}
-                  height={250}
-                  animated={addSlideUpAnim}
-                >
-                  Teoria
-                </PostSquare>
-              )
-          )}
-        </GridBlocks>
-        <h3>Back-End</h3>
-
-        <GridBlocks>
-          {techs.map(
-            (tech) =>
-              tech.backend?.gatsbyImageData && (
-                <PostSquare
-                  image={tech.backend?.gatsbyImageData}
-                  excerpt={tech.backend.excerpt}
-                  width={300}
-                  height={250}
+                  width={350}
+                  height={450}
                   animated={addSlideUpAnim}
                 >
                   Teoria

@@ -76,9 +76,17 @@ class Page extends Component {
           }}
         >
           <Main>
-            <h1 style={{ color: "white", marginTop: "100px" }}>
-              Artigos recentes
-            </h1>
+            <div style={{}}>
+              <h1
+                style={{
+                  color: "white",
+                  marginTop: "100px",
+                  textAlign: "start",
+                }}
+              >
+                Artigos recentes
+              </h1>
+            </div>
             <ArticlesBlog>
               {posts.map((el) => (
                 <ContainerArticle>

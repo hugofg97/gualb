@@ -10,7 +10,7 @@ const SlideRightAnim = (elements) => {
       {
         autoAlpha: 0,
         x: 200,
-        y: 100,
+        // y: 100,
       },
       {
         duration: 1.5,

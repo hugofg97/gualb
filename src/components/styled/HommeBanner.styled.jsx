@@ -27,8 +27,8 @@ export const ImageBox = styled.div`
   grid-area: mascot;
   max-width: 600px;
   img {
-    width: 400px;
-    height: 500px;
+    width: 380px;
+    height: 400px;
   }
   @media (max-width: 450px) {
     img {

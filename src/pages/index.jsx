@@ -102,6 +102,8 @@ export const pageQuery = graphql`
             formats: WEBP
             layout: CONSTRAINED
             quality: 3
+            width: 1
+            height: 1
             backgroundColor: "transparent"
             placeholder: NONE
             sizes: "(max-width: 512px , min-width:5px) 40px, 512px, 100vw"

@@ -136,7 +136,15 @@ class Page extends Component {
 }
 
 export default Page;
-
+export const Head = () => (
+  <>
+    <title>Tecnologia e Programação | Gualb</title>
+    <meta
+      name="description"
+      content="Curso de desenvolvimento de software, se torne um desenvolvedor de software e aprenda a criar aplicações web, desktop e mobile"
+    />
+  </>
+);
 export const pageQuery = graphql`
   query($id: String!) {
     wpPage(id: { eq: $id }) {

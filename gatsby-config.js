@@ -12,6 +12,12 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: "gatsby-plugin-html-attributes",
+      options: {
+        lang: "pt-BR",
+      },
+    },
+    {
       resolve: "gatsby-plugin-breakpoints",
       options: {
         queries: myCustomQueries,
@@ -36,7 +42,13 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-transformer-sharp`,
+      options: {
+        // The option defaults to true
+        checkSupportedExtensions: false,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

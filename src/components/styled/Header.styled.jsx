@@ -30,7 +30,7 @@ export const MenuLi = styled.li`
   font-size: 25px;
   font-weight: 900;
 `;
-export const MenuIcon = styled.button`
+export const MenuIcon = styled.div`
   width: 30px;
   height: 50px;
   background-color: transparent;

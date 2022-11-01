@@ -70,7 +70,7 @@ const TechnologySection = (props) => {
 
   return (
     <Container>
-      <PresentationBox>
+      {/* <PresentationBox>
         <h3>Mobile</h3>
 
         <GridBlocks>
@@ -89,7 +89,7 @@ const TechnologySection = (props) => {
               )
           )}
         </GridBlocks>
-      </PresentationBox>
+      </PresentationBox> */}
     </Container>
   );
 };

@@ -1,16 +1,12 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { StaticImage } from "gatsby-plugin-image";
-import { useBreakpoint, withBreakpoints } from "gatsby-plugin-breakpoints";
-
-import PostSquare from "../globals/post/PostSquare.block";
+import {  withBreakpoints } from "gatsby-plugin-breakpoints";
 import {
   Container,
-  BlockLearning,
-  GridBlocks,
   GridParagraph,
   Paragraph,
   PresentationBox,
@@ -19,58 +15,15 @@ import {
 } from "../globals/Blocks";
 
 import "../../global.css";
-import SlideUpAnim from "../Animation/SlideUp.anim";
-import SlideLeftAnim from "../Animation/SlideLeft.anim";
-import SlideRightAnim from "../Animation/SlideRight.anim";
-import SlideDownAnim from "../Animation/SlideDown.anim";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const FullStackSection = (props) => {
-  const brakpoints = useBreakpoint();
 
-  const slideUpAnimRef = useRef([]);
-  const slideRightAnimRef = useRef([]);
-  const slideLeftAnimRef = useRef([]);
-  const slideDownAnimRef = useRef([]);
-
-  slideUpAnimRef.current = [];
-  slideRightAnimRef.current = [];
-  slideLeftAnimRef.current = [];
-  slideDownAnimRef.current = [];
-
-  useEffect(() => {
-    SlideUpAnim(slideUpAnimRef);
-    SlideLeftAnim(slideLeftAnimRef);
-    SlideRightAnim(slideRightAnimRef);
-    SlideDownAnim(slideDownAnimRef);
-  }, []);
-
-  const addSlideUpAnim = (el) => {
-    if (el && !slideUpAnimRef.current.includes(el)) {
-      slideUpAnimRef.current.push(el);
-    }
-  };
-  const addSlideDownAnim = (el) => {
-    if (el && !slideDownAnimRef.current.includes(el)) {
-      slideDownAnimRef.current.push(el);
-    }
-  };
-  const addSlideRightAnim = (el) => {
-    if (el && !slideRightAnimRef.current.includes(el)) {
-      slideRightAnimRef.current.push(el);
-    }
-  };
-  const addSlideLeftAnim = (el) => {
-    if (el && !slideLeftAnimRef.current.includes(el)) {
-      slideLeftAnimRef.current.push(el);
-    }
-  };
-  const blocks = props.images;
   return (
     <Container>
       <PresentationBox>
-        <GridParagraph ref={addSlideLeftAnim}>
+        <GridParagraph >
           <Paragraph>
             <SubTitle>Um pouco sobre mim...</SubTitle>
             <div
@@ -81,7 +34,7 @@ const FullStackSection = (props) => {
                 gap: "24px",
                 // width: "700px",
               }}
-              ref={addSlideRightAnim}
+              
             >
               <StaticImage
                 width="660"
@@ -143,23 +96,9 @@ const FullStackSection = (props) => {
             internos da empresa
           </Paragraph>
         </GridParagraph>
-        {/* <div
-          ref={addSlideDownAnim}
-          style={{
-            width: "1.5px",
-            height: "80px",
-            background: "linear-gradient(180deg,#093366,rgba(153,109,255,0))",
-          }}
-        ></div> */}
-
-        {/* <GridBlocks>
-          <BlockLearning ref={addSlideUpAnim}>Teoria</BlockLearning>
-          <BlockLearning ref={addSlideUpAnim}>Prática</BlockLearning>
-          <BlockLearning ref={addSlideUpAnim}>Desafios</BlockLearning>
-        </GridBlocks> */}
+  
       </PresentationBox>
       <div
-        ref={addSlideUpAnim}
         style={{
           width: "1.5px",
           height: "80px",
@@ -169,9 +108,5 @@ const FullStackSection = (props) => {
     </Container>
   );
 };
-// };
-// ref={addSlideUpAnim}
-// ref={addSlideUpAnim}
-// ref={addSlideUpAnim}
 
 export default withBreakpoints(FullStackSection);

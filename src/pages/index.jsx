@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { graphql } from "gatsby";
-import styled from "styled-components";
-import { excerptsImg } from "../shared/mocks";
+// import styled from "styled-components";
+// import { excerptsImg } from "../shared/mocks";
 import { filterExcerptImages } from "../shared/helpers";
 
 import Header from "../templates/Header";
 import HommeBanner from "../components/home/HomeBanner.section";
-import FullStack from "../components/home/FullStack.section";
-import ChallengeSection from "../components/home/Challenge.section";
-import TechnologySection from "../components/home/Technology.section";
+// import FullStack from "../components/home/FullStack.section";
+// import ChallengeSection from "../components/home/Challenge.section";
+// import TechnologySection from "../components/home/Technology.section";
 import { Main, StyledDiv, SubTitle } from "../components/globals/Blocks";
 
 import "../global.css";
@@ -36,7 +36,7 @@ class Homepage extends Component {
             <div className="skewk">.</div>
           </StyledDiv>
 
-          <FullStack
+          {/* <FullStack
             posts={data.allWpPost.edges}
             images={imagesFront}
           ></FullStack>
@@ -58,7 +58,7 @@ class Homepage extends Component {
               Conteudo sobre Desenvolvimento de Software e Tecnologia
             </SubTitle>
           </div>
-          <TechnologySection techs={imagesFront}></TechnologySection>
+          <TechnologySection techs={imagesFront}></TechnologySection> */}
         </Main>
       </div>
     );

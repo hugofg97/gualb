@@ -77,6 +77,7 @@ const Page = (props) => {
               <Article>
                 <GatsbyImage
                   fadeIn="false"
+                  loading="eager"
                   critical={true}
                   fluid={
                     el.node.featuredImage.node.localFile.childImageSharp.fluid
@@ -101,6 +102,8 @@ const Page = (props) => {
               <Article>
                 <GatsbyImage
                   fadeIn="false"
+                  loading="eager"
+                  critical={true}
                   fluid={
                     el.node.featuredImage.node.localFile.childImageSharp.fluid
                   }
@@ -123,6 +126,9 @@ const Page = (props) => {
             <ContainerArticle>
               <Article>
                 <GatsbyImage
+                  fadeIn="false"
+                  loading="eager"
+                  critical={true}
                   style={{ bordeRadius: "8px" }}
                   fluid={
                     el.node.featuredImage.node.localFile.childImageSharp.fluid

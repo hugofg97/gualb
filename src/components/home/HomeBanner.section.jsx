@@ -1,6 +1,6 @@
 import React from "react";
-import { useBreakpoint, withBreakpoints } from "gatsby-plugin-breakpoints";
-import { StaticImage, GatsbyImage } from "gatsby-plugin-image";
+import { withBreakpoints } from "gatsby-plugin-breakpoints";
+import { GatsbyImage } from "gatsby-plugin-image";
 import {
   ButtonSubscriber,
   Container,
@@ -22,7 +22,6 @@ const HomeBanner = ({ images }) => {
   const { web } = images[3];
   const { moldura } = images[4];
 
-  const breakpoints = useBreakpoint();
   return (
     <Container>
       <TitleH1 className="title">
@@ -41,7 +40,6 @@ const HomeBanner = ({ images }) => {
           <IconBox>
             <div style={{ width: "40px" }}>
               <GatsbyImage
-                id="okok"
                 style={{
                   opacity: "none",
                 }}
@@ -60,7 +58,14 @@ const HomeBanner = ({ images }) => {
         <TecnologyCategoryBlock>
           <IconBox>
             <div style={{ width: "40px" }}>
-              <GatsbyImage image={{ ...mobile }} loading="eager"></GatsbyImage>
+              <GatsbyImage
+                style={{
+                  opacity: "none",
+                }}
+                aria-placeholder="none"
+                loading="eager"
+                image={{ ...mobile }}
+              ></GatsbyImage>
             </div>
             <Info>Mobile</Info>
           </IconBox>
@@ -72,7 +77,14 @@ const HomeBanner = ({ images }) => {
         <TecnologyCategoryBlock>
           <IconBox>
             <div style={{ width: "40px" }}>
-              <GatsbyImage image={{ ...back }}></GatsbyImage>
+              <GatsbyImage
+                style={{
+                  opacity: "none",
+                }}
+                aria-placeholder="none"
+                loading="eager"
+                image={{ ...back }}
+              ></GatsbyImage>
             </div>
             <Info>backend</Info>
           </IconBox>
@@ -84,7 +96,14 @@ const HomeBanner = ({ images }) => {
         <TecnologyCategoryBlock>
           <IconBox>
             <div style={{ width: "40px" }}>
-              <GatsbyImage image={{ ...infra }}></GatsbyImage>
+              <GatsbyImage
+                style={{
+                  opacity: "none",
+                }}
+                aria-placeholder="none"
+                loading="eager"
+                image={{ ...infra }}
+              ></GatsbyImage>
             </div>
             <Info>Infraestrutura</Info>
           </IconBox>

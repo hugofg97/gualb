@@ -6,6 +6,7 @@ import Image from "../assets/images/backblog.webp";
 import styled from "styled-components";
 import GatsbyImage from "gatsby-image";
 import { useBreakpoint, withBreakpoints } from "gatsby-plugin-breakpoints";
+import { url } from "inspector";
 
 const ArticleH1 = styled.h1``;
 const Article = styled.article`
@@ -53,8 +54,17 @@ const Page = (props) => {
     <ContinerPage style={{}}>
       <>{breakpoints.md ? <></> : <Header></Header>}</>
 
-      <Main>
-        <div style={{}}>
+      <Main
+        style={{
+          display: "flex",
+          backgroundAttachment: "fixed",
+          backgroundImage: `url(${Image})`,
+
+          backgroundSize: "100vw 100%",
+          // height: "100vh",
+        }}
+      >
+        <div>
           <h1
             style={{
               color: "white",
@@ -69,6 +79,30 @@ const Page = (props) => {
             <ContainerArticle>
               <Article>
                 <GatsbyImage
+                  fadeIn="false"
+                  fluid={
+                    el.node.featuredImage.node.localFile.childImageSharp.fluid
+                  }
+                  style={{ bordeRadius: "8px" }}
+                ></GatsbyImage>
+                <h1 style={{ color: "white" }}>{el.node.title}</h1>
+                <p style={{ color: "white" }}>
+                  {el.node.excerpt.replace("<p>", "").replace("</p>", "")}
+                </p>
+                <span style={{ color: "white" }}>
+                  {el.node.author.node.firstName}
+                </span>
+                <span style={{ color: "white" }}>{el.node.commentCount}</span>
+              </Article>
+            </ContainerArticle>
+          ))}
+        </ArticlesBlog>
+        <ArticlesBlog>
+          {posts.map((el) => (
+            <ContainerArticle>
+              <Article>
+                <GatsbyImage
+                  fadeIn="false"
                   fluid={
                     el.node.featuredImage.node.localFile.childImageSharp.fluid
                   }

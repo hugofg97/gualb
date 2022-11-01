@@ -100,12 +100,12 @@ export const pageQuery = graphql`
           gatsbyImageData(
             blurredOptions: { toFormat: WEBP }
             formats: WEBP
-            layout: FULL_WIDTH
-            quality: 40
+            layout: CONSTRAINED
+            quality: 3
             backgroundColor: "transparent"
             placeholder: NONE
-            sizes: "(max-width: 512px) 300px, 512px"
-            webpOptions: { quality: 40 }
+            sizes: "(max-width: 512px , min-width:5px) 40px, 512px, 100vw"
+            webpOptions: { quality: 3 }
           )
         }
       }

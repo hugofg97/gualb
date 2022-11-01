@@ -4,7 +4,7 @@ import Header from "./Header";
 import { Main } from "../components/globals/Blocks";
 import Image from "../assets/images/backblog.webp";
 import styled from "styled-components";
-import { GatsbyImage } from "gatsby-plugin-image";
+import GatsbyImage from "gatsby-image";
 import { useBreakpoint, withBreakpoints } from "gatsby-plugin-breakpoints";
 
 const ArticleH1 = styled.h1``;
@@ -69,8 +69,10 @@ const Page = (props) => {
             <ContainerArticle>
               <Article>
                 <GatsbyImage
+                  fluid={
+                    el.node.featuredImage.node.localFile.childImageSharp.fluid
+                  }
                   style={{ bordeRadius: "8px" }}
-                  image={el.node.featuredImage.node.gatsbyImage}
                 ></GatsbyImage>
                 <h1 style={{ color: "white" }}>{el.node.title}</h1>
                 <p style={{ color: "white" }}>
@@ -90,7 +92,9 @@ const Page = (props) => {
               <Article>
                 <GatsbyImage
                   style={{ bordeRadius: "8px" }}
-                  image={el.node.featuredImage.node.gatsbyImage}
+                  fluid={
+                    el.node.featuredImage.node.localFile.childImageSharp.fluid
+                  }
                 ></GatsbyImage>
                 <h1 style={{ color: "white" }}>{el.node.title}</h1>
                 <p style={{ color: "white" }}>
@@ -142,12 +146,13 @@ export const pageQuery = graphql`
           title
           featuredImage {
             node {
-              gatsbyImage(
-                height: 300
-                formats: WEBP
-                breakpoints: [750, 1080, 1366, 1920]
-                layout: FULL_WIDTH
-              )
+              localFile {
+                childImageSharp {
+                  fluid(quality: 50, maxWidth: 400) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
               template {
                 templateName
               }

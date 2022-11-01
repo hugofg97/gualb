@@ -105,7 +105,12 @@ export const pageQuery = graphql`
           fluid {
             originalName
           }
-          gatsbyImageData(width: 100, height: 100, formats: WEBP)
+          gatsbyImageData(
+            height: 300
+            breakpoints: [750, 1080, 1366, 1920]
+            layout: FULL_WIDTH
+            formats: WEBP
+          )
         }
       }
     }

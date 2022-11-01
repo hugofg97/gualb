@@ -10,7 +10,6 @@ export const Container = styled.header`
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  position: fixed;
   z-index: 999;
   @media (max-width: 1000px) {
     justify-content: space-between;

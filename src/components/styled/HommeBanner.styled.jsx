@@ -9,7 +9,7 @@ export const Container = styled.div`
     "block  block block block"
     "subscribe none none none";
   background-image: radial-gradient(circle at 47% 59%, #292558, #15132e 104%);
-  padding-top: 180px;
+  padding-top: 20px;
   overflow: hidden;
   height: 900px;
   justify-content: center;
@@ -25,10 +25,10 @@ export const Container = styled.div`
 `;
 export const ImageBox = styled.div`
   grid-area: mascot;
-  max-width: 600px;
+  max-width: 400px;
   & .gatsby-image-wrapper img {
-    width: 380px;
-    height: 400px;
+    // width: 380px;
+    // height: 400px;
   }
   @media (max-width: 450px) {
     .gatsby-image-wrapper img {

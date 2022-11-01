@@ -26,7 +26,12 @@ const HomeBanner = () => {
       </TitleH1>
 
       <ImageBox>
-        <StaticImage src="../../assets/images/moldura.webp"></StaticImage>
+        <StaticImage
+          // width="400"
+          sizes="[400,740,1300,1980]"
+          layout="constrained"
+          src="../../assets/images/moldura.webp"
+        ></StaticImage>
       </ImageBox>
 
       <TecnologyCategoryGrid>

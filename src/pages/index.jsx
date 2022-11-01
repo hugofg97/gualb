@@ -23,17 +23,17 @@ class Homepage extends Component {
       const { node } = image;
 
       return {
-        ...filterExcerptImages(node.fluid.originalName, excerptsImg, node),
+        ...filterExcerptImages(node.fluid.originalName, node),
       };
     });
-    console.log(imagesFront);
+    console.log(">>>>>>>>>>>>", imagesFront);
     return (
       <div style={{ margin: "0 auto" }}>
         <Header></Header>
 
         <Main>
           <StyledDiv>
-            <HommeBanner></HommeBanner>
+            <HommeBanner images={imagesFront}></HommeBanner>
             <div className="skewk">.</div>
           </StyledDiv>
 
@@ -83,18 +83,11 @@ export const pageQuery = graphql`
         fluid: {
           originalName: {
             in: [
-              "next.png"
-              "reactjs.png"
-              "gatsby.png"
-              "dart.png"
-              "node.png"
-              "html.png"
-              "css.png"
-              "nest.png"
-              "aws.png"
-              "graphql.png"
-              "flutter.png"
-              "graphql.png"
+              "moldura.webp"
+              "mobile-icon.png"
+              "web-icon.png"
+              "infra-icon.png"
+              "back-icon.png"
             ]
           }
         }
@@ -102,15 +95,10 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          fluid {
+          fluid(maxWidth: 400, quality: 50, webpQuality: 50, toFormat: WEBP) {
             originalName
+            ...GatsbyImageSharpFluid
           }
-          gatsbyImageData(
-            height: 300
-            breakpoints: [750, 1080, 1366, 1920]
-            layout: FULL_WIDTH
-            formats: WEBP
-          )
         }
       }
     }

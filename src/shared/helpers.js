@@ -1,47 +1,23 @@
-export const filterExcerptImages = (imgName, excerptsImg, node) => {
-  if (imgName.includes("react"))
+export const filterExcerptImages = (imgName, node) => {
+  if (imgName.includes("moldura"))
     return {
-      frontend: { ...node, excerpt: excerptsImg.react },
+      moldura: { ...node.fluid },
     };
-  if (imgName.includes("html"))
+  if (imgName.includes("web-icon"))
     return {
-      frontend: { ...node, excerpt: excerptsImg.html },
+      web: { ...node.fluid },
     };
-  if (imgName.includes("css"))
+  if (imgName.includes("mobile-icon"))
     return {
-      frontend: { ...node, excerpt: excerptsImg.css },
+      mobile: { ...node.fluid },
     };
-  if (imgName.includes("gatsby"))
+  if (imgName.includes("back-icon"))
     return {
-      frontend: { ...node, excerpt: excerptsImg.gatsby },
+      back: { ...node.fluid },
     };
-  if (imgName.includes("next"))
+  if (imgName.includes("infra-icon"))
     return {
-      frontend: { ...node, excerpt: excerptsImg.next },
-    };
-  if (imgName.includes("node"))
-    return {
-      backend: { ...node, excerpt: excerptsImg.node },
-    };
-  if (imgName.includes("nest"))
-    return {
-      backend: { ...node, excerpt: excerptsImg.nest },
-    };
-  if (imgName.includes("dart"))
-    return {
-      mobile: { ...node, excerpt: excerptsImg.dart },
-    };
-  if (imgName.includes("flutter"))
-    return {
-      mobile: { ...node, excerpt: excerptsImg.flutter },
-    };
-  if (imgName.includes("graphql"))
-    return {
-      backend: { ...node, excerpt: excerptsImg.graphql },
-    };
-  if (imgName.includes("aws"))
-    return {
-      infra: { ...node, excerpt: excerptsImg.aws },
+      infra: { ...node.fluid },
     };
   return "nada";
 };

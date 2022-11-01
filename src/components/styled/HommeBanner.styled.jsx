@@ -92,15 +92,8 @@ export const IconBox = styled.div`
   display: flex;
   align-items: center;
   border-radius: 150px;
-  img {
-    width: 50px !important;
-    height: 50px !important;
-  }
+
   @media (max-width: 700px) {
-    img {
-      width: 25px !important;
-      height: 25px !important;
-    }
   }
 `;
 export const Info = styled.h3`
@@ -125,7 +118,7 @@ export const TitleH1 = styled.h1`
   max-width: 600px;
   font-weight: 900;
   text-transform: uppercase;
-  font-size: 4rem;
+  font-size: 3.5rem;
   @media (max-width: 720px) {
     margin-top: 0px;
     font-size: 1.5rem;

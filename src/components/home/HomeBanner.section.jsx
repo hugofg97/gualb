@@ -1,6 +1,6 @@
 import React from "react";
 import { useBreakpoint, withBreakpoints } from "gatsby-plugin-breakpoints";
-import { StaticImage } from "gatsby-plugin-image";
+import GatsbyImage from "gatsby-image";
 import {
   ButtonSubscriber,
   Container,
@@ -15,7 +15,13 @@ import {
 } from "../styled/HommeBanner.styled";
 import "../../global.css";
 
-const HomeBanner = () => {
+const HomeBanner = ({ images }) => {
+  const { back } = images[0];
+  const { infra } = images[1];
+  const { mobile } = images[2];
+  const { web } = images[3];
+  const { moldura } = images[4];
+
   const breakpoints = useBreakpoint();
   return (
     <Container>
@@ -26,18 +32,23 @@ const HomeBanner = () => {
       </TitleH1>
 
       <ImageBox>
-        <StaticImage
-          // width="400"
-          sizes="[400,740,1300,1980]"
-          layout="constrained"
-          src="../../assets/images/moldura.webp"
-        ></StaticImage>
+        <GatsbyImage
+          loading={false}
+          fadeIn={false}
+          fluid={{ ...moldura }}
+        ></GatsbyImage>
       </ImageBox>
 
       <TecnologyCategoryGrid>
         <TecnologyCategoryBlock>
           <IconBox>
-            <StaticImage src="../../assets/images/web-icon.png"></StaticImage>
+            <div style={{ width: "40px" }}>
+              <GatsbyImage
+                loading={false}
+                fadeIn={false}
+                fluid={{ ...web }}
+              ></GatsbyImage>
+            </div>
             <Info>Front-end</Info>
           </IconBox>
           <ContentInfo>
@@ -47,11 +58,13 @@ const HomeBanner = () => {
         </TecnologyCategoryBlock>
         <TecnologyCategoryBlock>
           <IconBox>
-            <StaticImage
-              width="50"
-              height="50"
-              src="../../assets/images/mobile-icon.png"
-            ></StaticImage>
+            <div style={{ width: "40px" }}>
+              <GatsbyImage
+                loading={false}
+                fadeIn={false}
+                fluid={{ ...mobile }}
+              ></GatsbyImage>
+            </div>
             <Info>Mobile</Info>
           </IconBox>
           <ContentInfo>
@@ -61,7 +74,13 @@ const HomeBanner = () => {
         </TecnologyCategoryBlock>
         <TecnologyCategoryBlock>
           <IconBox>
-            <StaticImage src="../../assets/images/back-icon.png"></StaticImage>
+            <div style={{ width: "40px" }}>
+              <GatsbyImage
+                loading={false}
+                fadeIn={false}
+                fluid={{ ...back }}
+              ></GatsbyImage>
+            </div>
             <Info>backend</Info>
           </IconBox>
           <ContentInfo>
@@ -71,7 +90,13 @@ const HomeBanner = () => {
         </TecnologyCategoryBlock>
         <TecnologyCategoryBlock>
           <IconBox>
-            <StaticImage src="../../assets/images/infra-icon.png"></StaticImage>
+            <div style={{ width: "40px" }}>
+              <GatsbyImage
+                loading={false}
+                fadeIn={false}
+                fluid={{ ...infra }}
+              ></GatsbyImage>
+            </div>
             <Info>Infraestrutura</Info>
           </IconBox>
           <ContentInfo>
@@ -90,10 +115,10 @@ export default withBreakpoints(HomeBanner);
 
 {
   /* <ImageBox>
-        <StaticImage
+        <GatsbyImage
           height={400}
           src="../../assets/images/banner-1.png"
-        ></StaticImage>
+        ></GatsbyImage>
       </ImageBox> */
 }
 {
@@ -104,11 +129,11 @@ export default withBreakpoints(HomeBanner);
 {
   /* {breakpoints.xs ? (
             <div style={{ width: "50%" }}>
-              <StaticImage
+              <GatsbyImage
                 height={600}
                 width={400}
                 src="../../assets/images/banner-1.png"
-              ></StaticImage>
+              ></GatsbyImage>
             </div>
           ) : null} */
 }

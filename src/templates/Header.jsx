@@ -21,7 +21,7 @@ const Header = () => {
         <div></div>
         <div></div>
       </MenuIcon>
-      {/* <StaticImage src="../assets/logo.png" width={120} /> */}
+      <StaticImage src="../assets/logo.png" width={120} />
       <div>search</div>
     </Container>
   ) : (

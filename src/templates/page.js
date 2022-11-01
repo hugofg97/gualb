@@ -5,6 +5,7 @@ import { Main } from "../components/globals/Blocks";
 import Image from "../assets/images/backblog.webp";
 import styled from "styled-components";
 import { GatsbyImage } from "gatsby-plugin-image";
+import { useBreakpoint, withBreakpoints } from "gatsby-plugin-breakpoints";
 
 const ArticleH1 = styled.h1``;
 const Article = styled.article`
@@ -38,104 +39,77 @@ const ArticlesBlog = styled.div`
   justify-content: space-start;
 `;
 
-class Page extends Component {
-  render() {
-    const StaticPage = this.props.data.wpPage;
-    console.log(this.props.data);
-    const posts = this.props.data.allWpPost.edges;
-    return (
-      <div
-        style={{
-          margin: "0 auto",
-          backgroundImage: `url(${Image})`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "100% 100%",
-          backgroundAttachment: "fixed",
-          height: "100vh",
-        }}
-      >
-        <Header></Header>
-        {/* <div
-          style={{
-            display: "flex",
-            width: 200,
-            height: 200,
-            background: "red",
-          }}
-        >
-          aasas
-        </div> */}
-        <div
-          style={{
-            background: "rgba(255,255,255,0.2)",
-            overflowY: "scroll",
-            height: "100vh",
-          }}
-        >
-          <Main>
-            <div style={{}}>
-              <h1
-                style={{
-                  color: "white",
-                  marginTop: "100px",
-                  textAlign: "start",
-                }}
-              >
-                Artigos recentes
-              </h1>
-            </div>
-            <ArticlesBlog>
-              {posts.map((el) => (
-                <ContainerArticle>
-                  <Article>
-                    <GatsbyImage
-                      style={{ bordeRadius: "8px" }}
-                      image={el.node.featuredImage.node.gatsbyImage}
-                    ></GatsbyImage>
-                    <h1 style={{ color: "white" }}>{el.node.title}</h1>
-                    <p style={{ color: "white" }}>
-                      {el.node.excerpt.replace("<p>", "").replace("</p>", "")}
-                    </p>
-                    <span style={{ color: "white" }}>
-                      {el.node.author.node.firstName}
-                    </span>
-                    <span style={{ color: "white" }}>
-                      {el.node.commentCount}
-                    </span>
-                  </Article>
-                </ContainerArticle>
-              ))}
-            </ArticlesBlog>
-            <ArticlesBlog>
-              {posts.map((el) => (
-                <ContainerArticle>
-                  <Article>
-                    <GatsbyImage
-                      style={{ bordeRadius: "8px" }}
-                      image={el.node.featuredImage.node.gatsbyImage}
-                    ></GatsbyImage>
-                    <h1 style={{ color: "white" }}>{el.node.title}</h1>
-                    <p style={{ color: "white" }}>
-                      {el.node.excerpt.replace("<p>", "").replace("</p>", "")}
-                    </p>
-                    <span style={{ color: "white" }}>
-                      {el.node.author.node.firstName}
-                    </span>
-                    <span style={{ color: "white" }}>
-                      {el.node.commentCount}
-                    </span>
-                  </Article>
-                </ContainerArticle>
-              ))}
-            </ArticlesBlog>
-          </Main>
-        </div>
-      </div>
-    );
-  }
-}
+const ContinerPage = styled.div`
+  margin: 0 auto;
+  background-color: rgba(41, 37, 88, 0.4);
+`;
 
-export default Page;
+const Page = (props) => {
+  const StaticPage = props.data.wpPage;
+  const breakpoints = useBreakpoint();
+  console.log(props.data);
+  const posts = props.data.allWpPost.edges;
+  return (
+    <ContinerPage style={{}}>
+      <>{breakpoints.md ? <></> : <Header></Header>}</>
+
+      <Main>
+        <div style={{}}>
+          <h1
+            style={{
+              color: "white",
+              textAlign: "start",
+            }}
+          >
+            Artigos recentes
+          </h1>
+        </div>
+        <ArticlesBlog>
+          {posts.map((el) => (
+            <ContainerArticle>
+              <Article>
+                <GatsbyImage
+                  style={{ bordeRadius: "8px" }}
+                  image={el.node.featuredImage.node.gatsbyImage}
+                ></GatsbyImage>
+                <h1 style={{ color: "white" }}>{el.node.title}</h1>
+                <p style={{ color: "white" }}>
+                  {el.node.excerpt.replace("<p>", "").replace("</p>", "")}
+                </p>
+                <span style={{ color: "white" }}>
+                  {el.node.author.node.firstName}
+                </span>
+                <span style={{ color: "white" }}>{el.node.commentCount}</span>
+              </Article>
+            </ContainerArticle>
+          ))}
+        </ArticlesBlog>
+        <ArticlesBlog>
+          {posts.map((el) => (
+            <ContainerArticle>
+              <Article>
+                <GatsbyImage
+                  style={{ bordeRadius: "8px" }}
+                  image={el.node.featuredImage.node.gatsbyImage}
+                ></GatsbyImage>
+                <h1 style={{ color: "white" }}>{el.node.title}</h1>
+                <p style={{ color: "white" }}>
+                  {el.node.excerpt.replace("<p>", "").replace("</p>", "")}
+                </p>
+                <span style={{ color: "white" }}>
+                  {el.node.author.node.firstName}
+                </span>
+                <span style={{ color: "white" }}>{el.node.commentCount}</span>
+              </Article>
+            </ContainerArticle>
+          ))}
+        </ArticlesBlog>
+      </Main>
+    </ContinerPage>
+  );
+};
+
+export default withBreakpoints(Page);
 export const Head = () => (
   <>
     <title>Tecnologia e Programação | Gualb</title>
@@ -168,7 +142,12 @@ export const pageQuery = graphql`
           title
           featuredImage {
             node {
-              gatsbyImage(width: 300, formats: WEBP)
+              gatsbyImage(
+                height: 300
+                formats: WEBP
+                breakpoints: [750, 1080, 1366, 1920]
+                layout: FULL_WIDTH
+              )
               template {
                 templateName
               }

@@ -6,7 +6,6 @@ import Image from "../assets/images/backblog.webp";
 import styled from "styled-components";
 import GatsbyImage from "gatsby-image";
 import { useBreakpoint, withBreakpoints } from "gatsby-plugin-breakpoints";
-import { url } from "inspector";
 
 const ArticleH1 = styled.h1``;
 const Article = styled.article`
@@ -46,9 +45,7 @@ const ContinerPage = styled.div`
 `;
 
 const Page = (props) => {
-  const StaticPage = props.data.wpPage;
   const breakpoints = useBreakpoint();
-  console.log(props.data);
   const posts = props.data.allWpPost.edges;
   return (
     <ContinerPage style={{}}>
@@ -80,6 +77,7 @@ const Page = (props) => {
               <Article>
                 <GatsbyImage
                   fadeIn="false"
+                  critical={true}
                   fluid={
                     el.node.featuredImage.node.localFile.childImageSharp.fluid
                   }

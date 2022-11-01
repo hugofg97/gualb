@@ -1,6 +1,6 @@
 import React from "react";
 import { useBreakpoint, withBreakpoints } from "gatsby-plugin-breakpoints";
-import GatsbyImage from "gatsby-image";
+import { StaticImage, GatsbyImage } from "gatsby-plugin-image";
 import {
   ButtonSubscriber,
   Container,
@@ -32,11 +32,8 @@ const HomeBanner = ({ images }) => {
       </TitleH1>
 
       <ImageBox>
-        <GatsbyImage
-          loading={false}
-          fadeIn={false}
-          fluid={{ ...moldura }}
-        ></GatsbyImage>
+        <GatsbyImage loading="eager" image={{ ...moldura }}></GatsbyImage>
+        {/* <GatsbyImage image={{ ...moldura }}></GatsbyImage> */}
       </ImageBox>
 
       <TecnologyCategoryGrid>
@@ -44,9 +41,13 @@ const HomeBanner = ({ images }) => {
           <IconBox>
             <div style={{ width: "40px" }}>
               <GatsbyImage
-                loading={false}
-                fadeIn={false}
-                fluid={{ ...web }}
+                id="okok"
+                style={{
+                  opacity: "none",
+                }}
+                aria-placeholder="none"
+                loading="eager"
+                image={{ ...web }}
               ></GatsbyImage>
             </div>
             <Info>Front-end</Info>
@@ -59,11 +60,7 @@ const HomeBanner = ({ images }) => {
         <TecnologyCategoryBlock>
           <IconBox>
             <div style={{ width: "40px" }}>
-              <GatsbyImage
-                loading={false}
-                fadeIn={false}
-                fluid={{ ...mobile }}
-              ></GatsbyImage>
+              <GatsbyImage image={{ ...mobile }} loading="eager"></GatsbyImage>
             </div>
             <Info>Mobile</Info>
           </IconBox>
@@ -75,11 +72,7 @@ const HomeBanner = ({ images }) => {
         <TecnologyCategoryBlock>
           <IconBox>
             <div style={{ width: "40px" }}>
-              <GatsbyImage
-                loading={false}
-                fadeIn={false}
-                fluid={{ ...back }}
-              ></GatsbyImage>
+              <GatsbyImage image={{ ...back }}></GatsbyImage>
             </div>
             <Info>backend</Info>
           </IconBox>
@@ -91,11 +84,7 @@ const HomeBanner = ({ images }) => {
         <TecnologyCategoryBlock>
           <IconBox>
             <div style={{ width: "40px" }}>
-              <GatsbyImage
-                loading={false}
-                fadeIn={false}
-                fluid={{ ...infra }}
-              ></GatsbyImage>
+              <GatsbyImage image={{ ...infra }}></GatsbyImage>
             </div>
             <Info>Infraestrutura</Info>
           </IconBox>

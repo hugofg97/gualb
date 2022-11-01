@@ -26,7 +26,6 @@ class Homepage extends Component {
         ...filterExcerptImages(node.fluid.originalName, node),
       };
     });
-    console.log(">>>>>>>>>>>>", imagesFront);
     return (
       <div style={{ margin: "0 auto" }}>
         <Header></Header>
@@ -95,10 +94,19 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          fluid(maxWidth: 400, quality: 50, webpQuality: 50, toFormat: WEBP) {
+          fluid {
             originalName
-            ...GatsbyImageSharpFluid
           }
+          gatsbyImageData(
+            blurredOptions: { toFormat: WEBP }
+            formats: WEBP
+            layout: FULL_WIDTH
+            quality: 40
+            backgroundColor: "transparent"
+            placeholder: NONE
+            sizes: "(max-width: 512px) 300px, 512px"
+            webpOptions: { quality: 40 }
+          )
         }
       }
     }

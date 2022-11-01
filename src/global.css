@@ -35,6 +35,24 @@ body {
 
 }
 
+.gatsby-image-wrapper [data-main-image] {
+  opacity: 1;
+  transform: none !important;
+
+  transition: none !important;
+  will-change: none !important;
+}
+
+[data-placeholder-image] {
+
+  opacity: 1 !important;
+  transition: none !important;
+  background-color: transparent;
+  position: absolute;
+  inset: 0px;
+  object-fit: cover;
+}
+
 a {
   text-decoration: none
 }

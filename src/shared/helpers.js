@@ -1,23 +1,23 @@
 export const filterExcerptImages = (imgName, node) => {
   if (imgName.includes("moldura"))
     return {
-      moldura: { ...node.fluid },
+      moldura: { ...node.gatsbyImageData },
     };
   if (imgName.includes("web-icon"))
     return {
-      web: { ...node.fluid },
+      web: { ...node.gatsbyImageData },
     };
   if (imgName.includes("mobile-icon"))
     return {
-      mobile: { ...node.fluid },
+      mobile: { ...node.gatsbyImageData },
     };
   if (imgName.includes("back-icon"))
     return {
-      back: { ...node.fluid },
+      back: { ...node.gatsbyImageData },
     };
   if (imgName.includes("infra-icon"))
     return {
-      infra: { ...node.fluid },
+      infra: { ...node.gatsbyImageData },
     };
   return "nada";
 };

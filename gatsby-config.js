@@ -40,7 +40,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-image`,
+    `gatsby-image`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-transformer-sharp`,
